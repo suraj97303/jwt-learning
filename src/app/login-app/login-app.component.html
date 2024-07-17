@@ -1,0 +1,49 @@
+
+
+<div class="form-container">
+
+    <div class="form-content">
+       <form class="example-form">
+         <h2>Login Page </h2>
+     
+           <mat-form-field class="example-full-width">
+             <mat-label>Mobile No</mat-label>
+          
+<input class="Mobile" name="mobile"  type="tel" matInput placeholder="Enter your mobile number" required
+       maxLength="10" minlength="10" pattern="^[0-9]+$" [(ngModel)]="loginData.mobileNo" #Mobile="ngModel">
+       <div *ngIf="Mobile.invalid &&(Mobile.dirty || Mobile.touched)" style="color: red; font-size: 12px;" >
+      
+            <div *ngIf="Mobile.errors">Invalid Mobile Number</div>
+       </div>    
+           </mat-form-field>
+       
+       <mat-form-field class="example-full-width">
+           <mat-label>Pin</mat-label>
+           <input type="password"  name="pin" matInput placeholder="Enter your pin"  maxlength="6" minlength="4" pattern="^[0-6]+$" [(ngModel)]="loginData.pin" #Pin="ngModel">
+           <div *ngIf="Pin.invalid && (Pin.dirty || Pin.touched)" style="color: rgb(177, 59, 59); font-size: 12px;">
+          <div *ngIf="Pin.errors">Invalid Pin format</div>
+          </div>
+         
+      <!-- <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+         </mat-form-field>
+   
+         <a href="/register" target="_blank">Create New Account</a>
+         <section>
+           <!-- <div class="example-label">Flat</div> -->
+           <div class="example-button-row">
+           
+           
+             <button (click)="onSubmit()" mat-flat-button>Login</button>
+             <!-- <button mat-flat-button disabled>Disabled</button> -->
+            
+           </div>
+         </section>
+       
+       </form>
+     </div>
+       </div>
+   
+   
+   
+   
+   
